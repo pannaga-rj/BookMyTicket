@@ -69,7 +69,7 @@ section{
 
 .header .logo{
     font-weight: bolder;
-    color:#fb3e9d;
+    color:#81cbff;
     font-size: 5rem;
 }
 
@@ -248,7 +248,7 @@ section{
 .gallery .box-container .box .icons{
     position: absolute;
     bottom:-10rem; left:0; right: 0;
-    background:#d171a6;
+    background:#81cbff;
     padding-top: 1rem;
     text-align: center;
 }
