@@ -363,6 +363,7 @@ section{
 .feedback form{
     max-width: 70rem;
     margin:1rem auto;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -405,12 +406,16 @@ section{
 
 .footer{
     background:#222;
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    align-items: top; /* Center align items horizontally */
+    padding: 20px; /* Add padding around the footer */
 }
 
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap:1.5rem;
+    gap:6rem;
 }
 
 .footer .box-container .box h3{
@@ -459,7 +464,31 @@ body{
 }
 
 
+.feedback .inputBox {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
 
+.feedback input[type="email"] {
+    flex: 1; /* Allow the input to take up remaining space */
+    margin-right: 10px; /* Space between input and button */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.feedback button {
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.feedback button:hover {
+    background-color: #2685ea; /* Darker background on hover */
+}
 
 
 
@@ -533,3 +562,4 @@ body{
     }
 
 }
+
