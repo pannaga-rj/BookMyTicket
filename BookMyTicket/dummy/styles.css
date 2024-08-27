@@ -1,0 +1,93 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input field styling */
+form input[type="text"],
+form textarea,
+form input[type="number"],
+form input[type="date"],
+form input[type="file"],
+form input[type=int],
+form select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+/* Adjust spacing between dropdown and theater image */
+#city {
+    margin-bottom: 20px; /* Add more space below the dropdown */
+}
+
+/* Container for dynamically added movie fields */
+#movieFields {
+    margin-top: 20px; /* Space above the dynamically added fields */
+}
+
+/* Button styling */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+/* Style the Add Showtime button */
+.add-showtime-btn {
+    background-color: #0064AD; /* Green background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to a pointing hand */
+    margin-bottom: 20px;
+}
+
+.add-showtime-btn:hover {
+    background-color: #1681cd; /* Darker green background color on hover */
+}
