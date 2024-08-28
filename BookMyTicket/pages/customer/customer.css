@@ -1,5 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 50px;
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.heading span {
+    color: #0064AD;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    /* Increase the height of the box-container as needed */
+}
+
+.category-row {
+    margin-bottom: 30px;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    /* Ensure the title spans the full width */
+}
+
+.movie-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+    height: 300px;
+    /* Increase the height of the movie container */
+}
+
+.movie-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+    background-color: #0064AD;
+    border-radius: 10px;
+}
+
+.movie-container::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+}
+
+.movie-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 0 auto;
+    /* Ensures movie cards don't shrink */
+}
+
+.movie-poster {
+    width: 100%;
+    height: 200px;
+    /* Increase the height of the poster */
+    object-fit: fill;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.movie-rating {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.book-btn {
+    background-color: #0064AD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background-color: #004c8a;
+}
+
+/* Additional Styles for Full-Width Sections */
+.category-row {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+}
+
+.movie-container {
+    width: 100%;
+    /* Ensure movie container spans full width */
+    max-width: 100%;
+    /* Allow the movie container to take the full width */
+}
+
+/* root */
+
 :root{
     --main-color:#0064AD;
 }
