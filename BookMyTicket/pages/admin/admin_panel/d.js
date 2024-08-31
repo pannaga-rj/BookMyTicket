@@ -45,7 +45,7 @@ Object.keys(sections).forEach(tab => {
         document.getElementById(sections[tab]).classList.remove("hidden");
 
         fetchUser();
-        
+        fetchRes();
         // Highlight active tab
         document.querySelectorAll(".sidebar ul li").forEach(li => li.classList.remove("active"));
         this.classList.add("active");
@@ -808,3 +808,150 @@ async function editUsers(id) {
         console.log("No such document!");
     }
 }
+
+async function fetchRes() {
+    const querySnapshot = await getDocs(collection(db, "Reservations"));
+    const table = document.getElementById("ResTable");
+    const tbody = document.getElementById("ResTableBody");
+    tbody.innerHTML = ''; // Clear existing rows
+
+    querySnapshot.forEach((doc) => {
+        const ResData = doc.data();
+        addResToTable({ id: doc.id, ...ResData });
+    });
+
+    // Show table after data is loaded
+    table.classList.remove("hidden");
+    document.querySelector(".loading").classList.add("hidden");
+}
+
+function addResToTable(ResData) {
+    const tableBody = document.getElementById("ResTableBody");
+    const row = document.createElement("tr");
+    // Format the seats into a string
+    const seatsFormatted = ResData.seats.join('\n');
+    const start=[];
+    for(let key in ResData.startDate){
+        const temp=new Date(ResData.startDate[key]).toLocaleString();
+        start.push(temp);
+    }
+    const orderFormat=ResData.orderId.join('\n');
+    const startFormatted = start.join('\n');
+    row.innerHTML = `
+    <td style="text-align: center;">${tableBody.rows.length + 1}</td>
+    <td style="text-align: center;">${ResData.username}</td>
+    <td style="text-align: center;">${ResData.email}</td>
+    <td style="text-align: center;">${ResData.contactNo}</td>
+    <td style="text-align: center;">${ResData.theaterId}</td>
+    <td style="text-align: center;">${ResData.movieId}</td>
+    <td style="text-align: center;">${orderFormat}</td>
+    <td style="text-align: center;">${ResData.paymentMethod}</td>
+    <td style="text-align: center;">${seatsFormatted}</td>
+    <td style="text-align: center;">${startFormatted}</td>
+    <td style="text-align: center;">${ResData.totalPrice}</td>
+    <td style="text-align: center;">${ResData.Payment_Status ? "Paid" : "Pending"}</td>
+    <td> <a class="delete-link" data-id="${ResData.id}">Delete</a></td>
+    <td><a class="edit-link" data-id="${ResData.id}">Edit</a></td>
+    `;
+
+    tableBody.appendChild(row);
+
+    // Add event listener for "Delete" link
+}
+async function deleteRes(id) {
+    await deleteDoc(doc(db, "Reservations", id));
+    fetchRes(); // Refresh the movie table
+}
+
+
+async function editRes(ResId) {
+    const ResRef = doc(db, "Reservations", ResId);
+    const docSnap = await getDoc(ResRef);
+    if (docSnap.exists()) {
+        const ResData = docSnap.data();
+
+        document.getElementById('Eusername').value = ResData.username || '';
+        document.getElementById('Eemail').value = ResData.email || '';
+        document.getElementById('EcontactNo').value = ResData.contactNo || '';
+        document.getElementById('EmovieId').value = ResData.movieId || '';
+
+        const moviesContainer = document.getElementById('resContainer');
+        moviesContainer.innerHTML = '';
+
+        // Populate form with existing movie names
+        ResData.seats.forEach(seat => {
+            const movieInput = document.createElement('input');
+            movieInput.type = 'text';
+            movieInput.name = 'Seats';
+            movieInput.value = seat;
+            movieInput.classList.add('movie-input');
+            moviesContainer.appendChild(movieInput);
+        });
+
+        // Set the editing ID in the form's data attribute
+        document.getElementById('eResForm').dataset.editingId = ResId;
+        document.getElementById("editResForm").classList.remove("hidden");
+    } else {
+        console.log("No such document!");
+    }
+}
+
+document.getElementById('eResForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const resId = document.getElementById('eResForm').dataset.editingId;
+    const username = document.getElementById('Eusername').value;
+    const email = document.getElementById('Eemail').value;
+    const contactNo = document.getElementById('EcontactNo').value;
+    const movieId = document.getElementById('EmovieId').value;
+
+    // Get all seat inputs
+    const seats = document.getElementsByName('Seats');
+    const allSeats = Array.from(seats)
+        .map(input => input.value.trim())
+        .filter(value => value !== '');
+
+    
+    let sum=0;
+    let newtotalPrice = allSeats.reduce((sum, seat) => {
+        if (seat.includes("A") || seat.includes("B") || seat.includes("C") || seat.includes("D") || seat.includes("E") || seat.includes("F")) {
+            return sum + 250;
+        } else if (seat.includes("G") || seat.includes("H") || seat.includes("I") || seat.includes("J") || seat.includes("K") || seat.includes("L") || seat.includes("M") || seat.includes("N") || seat.includes("O") || seat.includes("P")) {
+            return sum + 200;
+        } else {
+            return sum + 150;
+        }
+    }, 0);
+    // Update reservation
+    const ResRef = doc(db, 'Reservations', resId); // Ensure correct collection name
+    await updateDoc(ResRef, {
+        username,
+        email,
+        contactNo,
+        movieId,
+        totalPrice:newtotalPrice,
+        seats: allSeats
+    });
+
+    document.getElementById("editResForm").classList.add("hidden");
+    document.getElementById("eResForm").reset();
+    document.getElementById("eResForm").dataset.editingId = "";
+
+    fetchRes(); // Ensure this function is defined and fetches updated data
+});
+
+document.getElementById("ResTableBody").addEventListener("click", function(event) {
+    if (event.target.classList.contains("delete-link")) {
+        const id = event.target.getAttribute("data-id");
+        if (confirm("Are you sure you want to delete this movie?")) {
+            deleteRes(id);
+        }
+    } else if (event.target.classList.contains("edit-link")) {
+        const id = event.target.getAttribute("data-id");
+            editRes(id);
+    }
+});
+
+document.getElementById("closeEResForm").addEventListener("click", function() {
+    document.getElementById("editResForm").classList.add("hidden");
+});

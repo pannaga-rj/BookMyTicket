@@ -232,10 +232,68 @@
         
         <!-- Other Sections Placeholder -->
         <div id="reservationsSection" class="content-section hidden">
-            <h2>Reservations Section</h2>
-            <!-- Content goes here -->
-        </div>
+            <h2></h2>
+            <div id="tableContainer">    
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">#</th>
+                            <th style="text-align: center;">Username</th>
+                            <th style="text-align: center;">Email</th>
+                            <th style="text-align: center;">Contact No</th>
+                            <th style="text-align: center;">Theater</th>
+                            <th style="text-align: center;">Movie</th>          
+                            <th style="text-align: center;">Order ID</th>          
+                            <th style="text-align: center;">Payment Method</th>          
+                            <th style="text-align: center;">Seats</th>          
+                            <th style="text-align: center;">StartDate</th>
+                            <th style="text-align: center;">TotalPrice</th>
+                            <th style="text-align: center;">Payment Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ResTableBody"></tbody>
 
+                    <!-- displays rows -->
+                </table>
+            </div>
+        </div>
+       
+        <div id="editResForm" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button" id="closeEResForm">&times;</span>
+                <form id="eResForm">
+                    <h2>Edit Reservation</h2>
+
+                    <input type="text" placeholder="Username" id="Eusername">
+                    <input type="email" placeholder="Email" id="Eemail">
+                    <input type="text" placeholder="Contact No" id="EcontactNo">
+                    <input type="text" placeholder="Movie" id="EmovieId">
+                    <div id="resContainer">
+                        <input type="text" id="Seats" name="Seats" placeholder="Enter seat">
+                    </div>
+                    
+                    <!-- Add Movie Button -->
+                    <button type="button" id="addSeatFieldBtn">Add Seats</button>
+                
+                    <button type="submit">Update Reservation</button>
+                </form>
+                
+                <script>
+                    // Function to dynamically add new movie input fields
+                    document.getElementById('addSeatFieldBtn').addEventListener('click', function() {
+                        const moviesContainer = document.getElementById('resContainer');
+                        const newMovieInput = document.createElement('input');
+                        newMovieInput.type = 'text';
+                        newMovieInput.name = 'Seats';
+                        newMovieInput.placeholder = 'Enter Seat';
+                        newMovieInput.classList.add('movie-input'); // Optional: add a class for styling
+                        
+                        moviesContainer.appendChild(newMovieInput);
+                    });
+                </script>
+                
+            </div>
+        </div>
         <div id="usersSection" class="content-section hidden ">
                 <div id="tableContainer">    
                     <table>
