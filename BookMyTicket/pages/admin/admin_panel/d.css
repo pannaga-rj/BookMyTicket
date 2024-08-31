@@ -1,0 +1,287 @@
+/* Seating Design */
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #0064AD;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px; /* Space between logo and list */
+}
+
+#logo img {
+    width: 100%; /* Ensure the image fits the width of the logo div */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%; /* Ensure the list items take full width */
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center; /* Center text in list items */
+}
+
+.sidebar ul li.active {
+    background-color: #004C8A;
+}
+
+.sidebar ul li:hover {
+    background-color: #004C8A;
+}
+
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+.add-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0064AD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.add-btn:hover {
+    background-color: #004C8A;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.poster-img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+a.delete-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.edit-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+a.delete-link:hover,
+a.edit-link:hover {
+    color: darkblue;
+}
+
+/* Form Modal Styles */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #0064AD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #004C8A;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #0064AD;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+}
+
+/* Edit */
+
+/* styles.css */
+
+.hidden {
+    display: none;
+}
+
+#addMovieForm {
+    margin-bottom: 20px;
+}
+
+.poster-img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+}
+
+button, .delete-link, .edit-link {
+    cursor: pointer;
+}
+
+.delete-link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.edit-link i {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f040"; /* Font Awesome edit icon */
+}
+
+select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: grey; /* changed this line to change font color to grey */
+}
+
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: grey; /* changed this line to change font color to grey on focus */
+}
+
+/* Enhanced Movie Item Styles */
+.movie-item {
+    border-bottom: 1px solid #ddd; /* Slightly lighter gray line for better visual consistency */
+    padding: 10px; /* Added more padding for better spacing */
+    margin-bottom: 10px; /* Adds margin between items */
+    background-color: #fff; /* Ensures a white background for clarity */
+    border-radius: 5px; /* Adds rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    
+}
+
+/* Style for the "Add Showtime" button */
+.add-showtime-button {
+    margin-top: 10px; /* Adjusted space above the button */
+    padding: 8px 15px; /* Increased padding for better touch targets */
+    background-color: #0064AD; /* Consistent with the sidebar and other buttons */
+    color: #fff; /* White text color for contrast */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Matches other buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect and scaling */
+}
+
+/* Hover effect for the "Add Showtime" button */
+.add-showtime-button:hover {
+    background-color: #004C8A; /* Darker blue for hover */
+    transform: scale(1.05); /* Slight scaling effect for interaction feedback */
+}
+
