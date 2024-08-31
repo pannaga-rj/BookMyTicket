@@ -1,0 +1,220 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #666;
+}
+
+#price-details {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    background-color: #444;
+    height: 50px;
+    width: 100%;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#seats-grid {
+    display: grid;
+    grid-template-columns: 30px repeat(15, 1fr) 10px repeat(15, 1fr);
+    grid-gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.row-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.seat {
+    background-color: #ccc;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.seat.selected {
+    background-color: #007bff;
+}
+
+.diamond {
+    background-color: #b9f2ff;
+}
+
+.gold {
+    background-color: #ffd700;
+}
+
+.silver {
+    background-color: #c0c0c0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#backBtn {
+    background-color: #6c757d;
+}
+
+#selectBtn {
+    background-color: #28a745;
+}
+
+#bookBtn {
+    background-color: #dc3545;
+    width: 100%;
+}
+
+#ticket-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#ticket-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Empty Seats */
+.seat.dummy {
+    visibility: hidden; /* Make the dummy seat invisible */
+    pointer-events: none; /* Disable any interaction with the dummy seat */
+}
+
+
+/* Seats No */
+.seat {
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black; /* Initial text color */
+    font-size: 12px; /* Adjust the font size as needed */
+    background-color: #ccc; /* Default background color */
+}
+
+.diamond {
+    background-color: #b9f2ff; /* Blue background for Diamond seats */
+}
+
+.gold {
+    background-color: #ffd700; /* Yellow background for Gold seats */
+}
+
+.silver {
+    background-color: #c0c0c0; /* Grey background for Silver seats */
+}
+
+.seat.selected {
+    color: white; /* Text color when selected */
+}
+
+
+
+/* Container for price and color indicator */
+.price-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Color indicator */
+.price-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
