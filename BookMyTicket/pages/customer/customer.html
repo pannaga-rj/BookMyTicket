@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to FiestA</title>
+    <title>Welcome to BMT</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -14,6 +15,8 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="customer.css">
 
+    
+
 </head>
 
 <body>
@@ -21,206 +24,110 @@
     <!-- header section starts  -->
 
     <header class="header">
-
-        <a href="#" class="logo"><span>F</span>iest<span>A</span></a>
-
+        <a href="#" class="logo"><span>Book</span>My<span>Ticket</span></a>
+    
         <nav class="navbar">
             <a href="#Home">Home</a>
-            <a href="#Service">Service</a>
-            <a href="/about" target="_blank">About</a>
-            <a href="/gallery" target="_blank">Gallery</a>
-            <a href="/packages" target="_blank">Packages</a>
-            <a href="/login">Login</a>
-            <a href="/reg">Register</a>
+            <a href="#Home">Your Tickets</a>
+            <div id="profile-container" class="profile-container">
+                <i id="profileIcon" class="fas fa-user"></i>
+                <div id="profileDropdown" class="profile-dropdown">
+                    <button id="closeProfileDropdown" class="close-dropdown">×</button>
+                    <div id="profileDetails">
+                        <p id="profileName"></p>
+                        <p id="profileEmail"></p>
+                        <p id="profileCity"></p>
+                        <p id="profilePhone"></p>
+                        <button id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
         </nav>
-
+    
         <div id="menu-bars" class="fas fa-bars"></div>
-
     </header>
+    
+    
+
 
     <!-- header section ends -->
+    
+
 
     <!-- home section starts  -->
 
     <section class="home" id="Home">
 
         <div class="content">
-            <h3>Create Lasting Memories with Our  <span> Event Mastery! </span></h3>
+            <h3>"Your Favorite Films, Just a Click Away –   <span> Book Now, Enjoy Later!" </span></h3>
         </div>
 
         <div class="swiper-container home-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p4.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p5.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p6.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="..\..\assests\movie_posters\p7.jpg" alt=""></div>
-                
+                    <!-- Dynamic -->
             </div>
+            <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
         </div>
 
     </section>
 
     <!-- home section ends -->
 
-    <!-- service section starts  -->
-
-    <section class="service" id="Service">
-
-        <h1 class="heading"> our <span>services</span> </h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>VENUE</h3>
-                <p>We have the best location for all types of events in Bangalore. </p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-envelope"></i>
-                <h3>INVITATION CARDS</h3>
-                <p>200+ designs of wedding cards are available.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-music"></i>
-                <h3>ENTERTAINMENT </h3>
-                <p>we provide best Sangeet,party decors with world's best DJ</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-utensils"></i>
-                <h3>FOOD AND DRINKS</h3>
-                <p>we have all the 7 cuisines with best quality.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-photo-video"></i>
-                <h3>PHOTOGRAPHY</h3>
-                <p>best photographers of bangalore are found here.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-birthday-cake"></i>
-                <h3>CAKES</h3>
-                <p>We have 100+ varieties of fresh cake made from bangalore's best bakers.</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-paint-brush"></i>
-                <h3>BRIDAL AND GROOM MAKEOVER</h3>
-                <p>We provide bridal makeover with best makeup artist and hairdresser</p>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-home"></i>
-                <h3>HOTEL BOOKINGS</h3>
-                <p>We provide stay facility near the venue to around 50 people.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- service section ends -->
-
-     
-
-    <!-- gallery section starts  -->
-    <section class="gallery" id="gallery">
-        <h1 class="heading">Our <span>Gallery</span></h1>
-        <div id="dynamicContent" class="box-container">
-            <!-- Dynamic content will be injected here -->
-        </div>
-    </section>
 
 
-    <!-- gallery section ends -->
+   <!-- gallery section starts  -->
+   <section class="gallery" id="gallery">
+    <h1 class="heading">Our <span>Gallery</span></h1>
+    <div id="dynamicContent" class="box-container">
+        <!-- Dynamic content will be injected here -->
+    </div>
+</section>
 
-    <!-- review section starts  -->
 
-    <section class="reivew" id="review">
 
-        <h1 class="heading">client's <span>review</span></h1>
 
-        <div class="review-slider swiper-container">
 
-            <div class="swiper-wrapper">
 
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/r-1.jpg" alt="">
-                        <div class="user-info">
-                            <h3>Anubhav</h3>
-                            <span>client</span>
-                        </div>
-                    </div>
-                    <p>I am really in love with the arrangements. I contacted them for my birthday party. It was
-                        reasonable price and the party went well.Thank you so much fiesta</p>
-                </div>
+<!-- gallery section ends -->
 
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/r-4.jpeg" alt="">
-                        <div class="user-info">
-                            <h3>Akanksha</h3>
-                            <span>client</span>
-                        </div>
-                    </div>
-                    <p>I am really happy with the service they provide. The arrangements were super for my sister's
-                        wedding.really loved the decoration,food everything!!</p>
-                </div>
 
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/r-6.jpeg" alt="">
-                        <div class="user-info">
-                            <h3>Lisa </h3>
-                            <span>client</span>
-                        </div>
-                    </div>
-                    <p>5 star rating for the service. i am happy and satisfied with the arrangements.The managers were polite. All the Best team.</p>
-                </div>
 
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/r-7.jpeg" alt="">
-                        <div class="user-info">
-                            <h3>Sumith</h3>
-                            <span>client</span>
-                        </div>
-                    </div>
-                    <p> I contacted them for my marriage. The arrangements were fabulous. Really in love with the team.</p>
-                </div>
+<!-- service section starts  -->
 
-                <div class="swiper-slide box">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="images/r-5.jpeg" alt="">
-                        <div class="user-info">
-                            <h3>Archana</h3>
-                            <span>client</span>
-                        </div>
-                    </div>
-                    <p>Too many cuisines for an event which went waste but worth the price. the food was delicious.
-                        decoration was a bit under-rated.
-                    </p>
-                </div>
+<section class="service" id="Service">
 
-            </div>
+<h1 class="heading"> our <span>services</span> </h1>
 
-        </div>
+<div class="box-container">
 
-    </section>
+<div class="box">        
+    <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fuser_friendly.png?alt=media" alt="User Friendly Image">
+    <h3>User-friendly Interface</h3>
+    <p>Intuitive design for easy navigation and content creation.</p>
+</div>
 
-    <!-- review section ends -->
+<div class="box">
+    <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fmovie_ticket.png?alt=media" alt="movie_ticket">
+    <h3>Easy Booking Process</h3>
+    <p>Book your movie tickets in just a few clicks with our intuitive, user-friendly interface.</p>
+</div>
+
+<div class="box">
+    <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fmovie_schedule.png?alt=media" alt="movie_schedule">
+    <h3>Movie Schedules</h3>
+    <p>Know all the current Schedules</p>
+</div>
+
+<div class="box">
+    <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fadmin_panel.png?alt=media" alt="admin_panel">
+    <h3>Admin Panel</h3>
+    <p>"Effortlessly manage movies, theaters, and reservations with our intuitive admin panel."</p>
+</div>
+</div>
+
+</section>
 
     
 
@@ -268,11 +175,13 @@
     
 
 
-
+ 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- custom js file link  -->
-    <script src="customer.js"></script>
+
+
+    <script src="customer.js" type="module"></script>
 
 </body>
 
