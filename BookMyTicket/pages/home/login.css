@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    background: #e9ecef; /* Light grey background for tabs container */
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    color: #000; /* Text color for the tabs */
+    font-size: 18px; /* Enlarged text size */
+    font-weight: bold; /* Make text bold */
+}
+
+.tab.active {
+    background: #0056b3; /* Blue background for the active tab */
+    color: #fff; /* Text color for the active tab */
+}
+
+.tab#loginTab {
+    background: #0056b3; /* Blue background color for the Login tab */
+}
+
+.tab#registerTab {
+    background: #6c757d; /* Grey background color for the Register tab */
+    color: #fff; /* Text color for the Register tab */
+}
+
+.tab#loginTab.active {
+    background: #0056b3; /* Darker blue for the active Login tab */
+}
+
+.tab#registerTab.active {
+    background: #5a6268; /* Darker grey for the active Register tab */
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #0056b3;
+    color: #fff;
+    font-size: 16px;
+    flex: 1;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#homeBtnLogin, #homeBtnRegister {
+    background: #0056b3;
+}
+
+#homeBtnLogin:hover, #homeBtnRegister:hover {
+    background: #0056b3;
+}
+
+
+
+/* Message Div */
+.disp_mesg{
+    background-color: darkslategrey;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: ease-in 7s forwards;
+}
