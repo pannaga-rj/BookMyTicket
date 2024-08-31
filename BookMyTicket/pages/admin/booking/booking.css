@@ -1,0 +1,395 @@
+/* Existing Navbar CSS */
+* {
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body {
+    background:#fff;
+}
+
+section {
+    padding:2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    padding-bottom: 2rem;
+    color:#157fcb;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.heading span {
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.header {
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 10000;
+    background:#5ab4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 9%;
+}
+
+.header .logo {
+    font-weight: bolder;
+    color:#81cbff;
+    font-size: 5rem;
+}
+
+.header .logo span {
+    color:var(--main-color);
+}
+
+.header .navbar a {
+    font-size: 2.5rem;
+    color:#0064AD;
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover {
+    color:var(--main-color);
+}
+
+#menu-bars {
+    font-size: 3rem;
+    color:#0064AD;
+    cursor: pointer;
+    display: none;
+}
+
+/* Profile Container Styles */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+#profileIcon {
+    padding-left: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#profileIcon:hover {
+    color: #0056b3;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjusted for a better view */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; /* Enlarged width */
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.profile-dropdown button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+
+.profile-dropdown .close-dropdown {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.profile-dropdown .close-dropdown:hover {
+    color: #000;
+}
+
+#profileDetails {
+    margin-top: 10px;
+}
+
+#profileDetails p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Movie Details Section CSS */
+.movie-details {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 150px; /* To account for fixed navbar */
+    position: relative;
+    background: #e0e0e0; /* Darker grey background for the whole section */
+    padding: 2rem; /* Add padding for spacing */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.movie-poster {
+    width: 300px; /* Adjusted to the original size */
+    background: linear-gradient(to bottom, #c0c0c0, #a0a0a0); /* Darker gradient for the movie poster */
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie-info {
+    margin-left: 20px;
+    max-width: 600px;
+}
+
+.movie-info h2 {
+    font-size: 4rem; /* Increased font size */
+    color: #333;
+    font-weight: bold; /* Stylish title */
+    margin-bottom: 1rem;
+}
+
+.movie-info p {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.about-movie {
+    margin-top: 2rem;
+}
+
+.about-movie h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+.about-movie p {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+/* Play Icon */
+.play-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem; /* Adjusted size */
+    color: #333;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 0.8rem; /* Adjusted padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Play Trailer Description */
+.play-description {
+    position: absolute;
+    left: 50%;
+    bottom: -3rem; /* Position below the play icon */
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* Date */
+.date-section-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    color: #666;
+    user-select: none;
+}
+
+.arrow:hover {
+    color: #ff3366;
+}
+
+.date-section {
+    overflow: hidden;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.date-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 70px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.date-box.selected {
+    background-color: #ff3366;
+    color: #ffffff;
+}
+
+.date-box:hover {
+    background-color: #ff6666;
+    color: #ffffff;
+}
+
+.date-box span {
+    font-size: 14px;
+}
+
+.date-box .day {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#theatreSection {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+
+.theatre-box h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.theatre-box p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.theatre-box {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.showtime-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of showtime boxes */
+    gap: 10px; /* Space between boxes */
+}
+
+.showtime-box {
+    background-color: #007bff; /* Blue background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    flex: 1; /* Allow boxes to grow and shrink */
+    min-width: 100px; /* Set a minimum width */
+}
+
+.showtime-box:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.date-box.selected {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.date-box {
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
