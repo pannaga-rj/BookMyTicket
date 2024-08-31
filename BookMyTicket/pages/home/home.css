@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* Profile Container Styles */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+#profileIcon {
+    padding-left: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#profileIcon:hover {
+    color: #0056b3;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjusted for a better view */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; /* Enlarged width */
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.profile-dropdown button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+
+.profile-dropdown .close-dropdown {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.profile-dropdown .close-dropdown:hover {
+    color: #000;
+}
+
+#profileDetails {
+    margin-top: 10px;
+}
+
+#profileDetails p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 50px;
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.heading span {
+    color: #0064AD;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto; /* Increase the height of the box-container as needed */
+}
+
+.category-row {
+    margin-bottom: 30px;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%; /* Ensure the title spans the full width */
+}
+
+.movie-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+    height: 330px; /* Increase the height of the movie container */
+}
+
+.movie-container::-webkit-scrollbar {
+    height: 3px;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+    background-color: #0064AD;
+    border-radius: 10px;
+}
+
+.movie-container::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+}
+
+.movie-card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 0 auto; /* Ensures movie cards don't shrink */
+}
+
+.movie-poster {
+    width: 100%;
+    height: 200px; /* Increase the height of the poster */
+    object-fit: fill;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
+    cursor: grab; /* Change the cursor to indicate draggable content */
+}
+
+.movie-title::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for a cleaner look */
+}
+
+
+.movie-rating {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.book-btn {
+    background-color: #0064AD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background-color: #004c8a;
+}
+
+/* Additional Styles for Full-Width Sections */
+.category-row {
+    display: block; /* Ensure sections are placed one below the other */
+    width: 100%; /* Occupy full width of the screen */
+}
+
+.movie-container {
+    width: 100%; /* Ensure movie container spans full width */
+    max-width: 100%; /* Allow the movie container to take the full width */
+}
+
+
+
+/* root */
+:root{
+    --main-color:#0064AD;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #fff;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body{
+    background:#fff;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    color:#157fcb;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+
+.header{
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 10000;
+    background:#5ab4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 9%;
+}
+
+.header .logo{
+    font-weight: bolder;
+    color:#81cbff;
+    font-size: 5rem;
+}
+
+.header .logo span{
+    color:var(--main-color);
+}
+
+.header .navbar a{
+    font-size: 2.5rem;
+    color:#0064AD;
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+}
+
+#menu-bars{
+    font-size: 3rem;
+    color:#0064AD;
+    cursor: pointer;
+    display: none;
+}
+
+.home .content{
+    text-align: center;
+    padding-top: 6rem;
+    margin:2rem auto;
+    max-width: 70rem;
+}
+
+.home .content h3{
+    color:#81cbff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+.home .content h3 span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.home .home-slider .swiper-slide{
+    overflow: hidden;
+    border-radius: .5rem;
+    height: 50rem;
+    width:35rem;
+}
+
+.home .home-slider .swiper-slide img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.service .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+}
+
+.service .box-container .box{
+    border-radius: .4rem;
+    background:#444;
+    text-align: center;
+    padding:2.5rem;
+}
+
+.service .box-container .box i{
+    height: 7rem;
+    width: 7rem;
+    line-height: 7rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    background:var(--main-color);
+    color: #fff;;
+}
+
+.service .box-container .box h3{
+    font-size: 2rem;
+    color:#fff;
+    padding:1rem 0;
+}
+
+.service .box-container .box p{
+    font-size: 1.6rem;
+    color:#eee;
+    line-height: 1.7;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+
+.about .row .image{
+    flex:1 1 45rem;
+    padding:1rem;
+}
+
+.about .row .image img{ 
+    width: 100%;
+    border-radius: .5rem;
+    border: 1px solid #0064AD;
+}
+
+.about .row .content{
+    flex:1 1 45rem;
+}
+
+.about .row .content h3{
+    font-size: 3.5rem;
+    color:var(--main-color);
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color:#888;
+    padding:1rem 0;
+    line-height: 2;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    background: #81cbff;
+    color: #0064AD;
+    cursor: pointer;
+}
+
+.gallery .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+}
+
+.gallery .box-container .box{
+    position: relative;
+    border:1rem solid #81cbff;
+    border-radius: .5rem;
+    height: 30rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.gallery .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery .box-container .box:hover img{
+    transform: scale(1.1);
+   filter: none;
+}
+
+.gallery .box-container .box .title{
+    position: absolute;
+    top:-10rem; left:0; right: 0;
+    background:#73c0f7;
+    color:#333;
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.gallery .box-container .box:hover .title{
+    top:0;
+}
+
+.gallery .box-container .box .icons{
+    position: absolute;
+    bottom:-10rem; left:0; right: 0;
+    background:#81cbff;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.gallery .box-container .box:hover .icons{
+    bottom: 0;
+}
+
+.gallery .box-container .box .icons a{
+    font-size: 2rem;
+    margin:.5rem 1rem;
+    color:#333;
+}
+
+.gallery .box-container .box .icons a:hover{
+    color:var(--main-color);
+}
+
+
+
+.package .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.package .box-container .box{
+    padding:2rem 0;
+    background:#333;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.package .box-container .box:hover{
+    transform: scale(1.03);
+}
+
+.package .box-container .box .title{
+    background:var(--main-color);
+    color:#fff;
+    padding:1.5rem 0;
+    font-size: 2rem;
+}
+
+.package .box-container .box .amount{
+    color:#fff;
+    padding-top: 2rem;
+    font-size: 4rem;
+}
+
+.package .box-container .box ul{
+    list-style-type: none;
+    padding:1rem 0;
+}
+
+.package .box-container .box ul li{
+    font-size: 1.5rem;
+    color:#eee;
+    padding:1rem 0;
+}
+
+.package .box-container .box ul li i{
+    color:var(--main-color);
+    padding-right: .5rem;
+}
+
+.reivew .box{
+    border-radius: .5rem;
+    background: #333;
+    padding:2rem;
+    position: relative;
+}
+
+.reivew .box .fa-quote-right{
+    position: absolute;
+    top:2rem; right: 2rem;
+    color:var(--main-color);
+    font-size: 5rem;
+}
+
+.reivew .box .user{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    padding-bottom: 1rem;
+}
+
+.reivew .box .user img{
+    height:7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reivew .box .user h3{
+    font-size: 2rem;
+    color:#fff;
+}
+
+.reivew .box .user span{
+    font-size: 1.5rem;
+    color:#eee;
+}
+
+.reivew .box p{
+    line-height: 2;
+    color:#eee;
+    padding:.5rem 0;
+    font-size: 1.6rem;
+}
+
+.feedback form{
+    max-width: 70rem;
+    margin:1rem auto;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feedback form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feedback form .inputBox input,
+.feedback form textarea{
+    width: 100%;
+    background:#333;
+    border-radius: .5rem;
+    padding:1rem;
+    margin:.7rem 0;
+    font-size: 1.5rem;
+    color:#ffffff;
+    text-transform: none;
+}
+
+.feedback form .inputBox input::placeholder,
+.feedback form textarea::placeholder{
+    color:#eee;
+    text-transform: capitalize;
+}
+
+.feedback form .inputBox input:focus,
+.feedback form textarea:focus{
+    background:#444;
+}
+
+.feedback form .inputBox input{
+    width: 49%;
+}
+
+.feedback form textarea{
+    resize: none;
+}
+
+.footer{
+    background:#222;
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    align-items: top; /* Center align items horizontally */
+    padding: 20px; /* Add padding around the footer */
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:6rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    color:#fff;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    padding:1rem 0;
+    color:#eee;
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--main-color);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 1.5rem;
+    color:#fff;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid #222;
+    color:#fff;
+    padding:2rem;
+    padding-top: 2.5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.footer .credit span{
+    color:var(--main-color);
+}
+
+
+body{
+    /* background-image: url('background1.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.feedback .inputBox {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+}
+
+.feedback input[type="email"] {
+    flex: 1; /* Allow the input to take up remaining space */
+    margin-right: 10px; /* Space between input and button */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.feedback button {
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.feedback button:hover {
+    background-color: #2685ea; /* Darker background on hover */
+}
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-bars{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:100%; left:0; right:0;
+        border-top: .1rem solid #fff;
+        background: #fff;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    .header .navbar a{
+        display: flex;
+        background:hwb(319 92% 2%);
+        border-radius: .5rem;
+        padding:1.3rem;
+        margin:1.3rem;
+        font-size: 2rem;
+    }
+
+    .home .content h3{
+        font-size: 4rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .home .home-slider .swiper-slide{
+        width: 27rem;
+    }
+
+    .feedback form .inputBox input{
+        width: 100%;
+    }
+
+}
+
+
+
+
