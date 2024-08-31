@@ -117,7 +117,6 @@ async function getTrendingMovies() {
         console.error('Error fetching documents: ', error);
     }
 }
-
 async function generateGallery() {
     try {
         const querySnapshot = await getDocs(collection(db, 'Movies'));
@@ -149,7 +148,7 @@ async function generateGallery() {
                 categoryTitle.textContent = categoryTitles[category];
                 categoryRow.appendChild(categoryTitle);
 
-                // Create Movie Container
+                // Create Movie Container (Scrollable Row)
                 const movieContainer = document.createElement('div');
                 movieContainer.classList.add('movie-container');
 
@@ -200,6 +199,7 @@ async function generateGallery() {
         console.error('Error generating gallery: ', error);
     }
 }
+
 
 // MENU
 let menu = document.querySelector('#menu-bars');

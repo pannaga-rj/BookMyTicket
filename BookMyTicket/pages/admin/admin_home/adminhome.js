@@ -134,6 +134,7 @@ async function generateGallery() {
         };
 
         const dynamicContent = document.getElementById('dynamicContent');
+        dynamicContent.innerHTML = ''; // Clear existing content
 
         categories.forEach(category => {
             const categoryMovies = getdata.filter(movie => movie.category.includes(category));
@@ -151,7 +152,7 @@ async function generateGallery() {
 
                 // Create Movie Container
                 const movieContainer = document.createElement('div');
-                movieContainer.classList.add('movie-container');
+                movieContainer.classList.add('movie-container', 'scrollable');
 
                 // Create Movie Cards
                 categoryMovies.forEach(movie => {
@@ -181,7 +182,7 @@ async function generateGallery() {
                         localStorage.setItem('movieData', JSON.stringify(movie));
                         window.location.href = '../booking/booking.html';
                     });
-                    
+
                     movieInfo.appendChild(movieTitle);
                     movieInfo.appendChild(movieRating);
                     movieInfo.appendChild(bookButton);
@@ -200,6 +201,9 @@ async function generateGallery() {
         console.error('Error generating gallery: ', error);
     }
 }
+
+// Call the function to generate the gallery when the page loads
+document.addEventListener('DOMContentLoaded', generateGallery);
 
 // MENU
 let menu = document.querySelector('#menu-bars');
