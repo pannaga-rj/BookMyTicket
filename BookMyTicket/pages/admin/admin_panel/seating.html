@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater Seat Booking</title>
+    <link rel="stylesheet" href="seating.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="TheaterName"></h1>
+            <p>Show Time: 7:00 PM</p>
+        </div>
+
+        <div class="seats-container">
+            <div class="price-container">
+                <div class="price-indicator diamond"></div>
+                <div class="price">Diamond Class: ₹250</div>
+            </div>
+            <div class="price-container">
+                <div class="price-indicator gold"></div>
+                <div class="price">Gold Class: ₹200</div>
+            </div>
+            <div class="price-container">
+                <div class="price-indicator silver"></div>
+                <div class="price">Silver Class: ₹150</div>
+            </div>
+            <p><b>Select the seats where you want to leave empty</b></p>
+            
+            <div id="seats-grid">
+                <!-- Seats will be generated here by JavaScript -->
+            </div>
+            <div class="screen">Screen</div>
+        </div>
+
+        <div class="actions">
+            <button id="backBtn">Back</button>
+            <button id="selectBtn">Save Structure</button>
+        </div>  
+    </div>
+    <script type="module" src="seating.js"></script>
+</body>
+</html>
