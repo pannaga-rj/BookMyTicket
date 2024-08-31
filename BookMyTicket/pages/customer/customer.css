@@ -1,5 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
+/* Profile Container Styles */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+#profileIcon {
+    padding-left: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#profileIcon:hover {
+    color: #0056b3;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjusted for a better view */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; /* Enlarged width */
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.profile-dropdown button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+
+.profile-dropdown .close-dropdown {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.profile-dropdown .close-dropdown:hover {
+    color: #000;
+}
+
+#profileDetails {
+    margin-top: 10px;
+}
+
+#profileDetails p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
 /* Gallery Section */
 .gallery {
     text-align: center;
@@ -19,8 +95,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: auto;
-    /* Increase the height of the box-container as needed */
+    height: auto; /* Increase the height of the box-container as needed */
 }
 
 .category-row {
@@ -31,8 +106,7 @@
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: left;
-    width: 100%;
-    /* Ensure the title spans the full width */
+    width: 100%; /* Ensure the title spans the full width */
 }
 
 .movie-container {
@@ -42,12 +116,11 @@
     padding: 10px;
     white-space: nowrap;
     width: 100%;
-    height: 300px;
-    /* Increase the height of the movie container */
+    height: 330px; /* Increase the height of the movie container */
 }
 
 .movie-container::-webkit-scrollbar {
-    height: 8px;
+    height: 3px;
 }
 
 .movie-container::-webkit-scrollbar-thumb {
@@ -66,14 +139,12 @@
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 0 0 auto;
-    /* Ensures movie cards don't shrink */
+    flex: 0 0 auto; /* Ensures movie cards don't shrink */
 }
 
 .movie-poster {
     width: 100%;
-    height: 200px;
-    /* Increase the height of the poster */
+    height: 200px; /* Increase the height of the poster */
     object-fit: fill;
 }
 
@@ -84,7 +155,17 @@
 .movie-title {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
+    cursor: grab; /* Change the cursor to indicate draggable content */
 }
+
+.movie-title::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for a cleaner look */
+}
+
 
 .movie-rating {
     font-size: 1rem;
@@ -106,21 +187,18 @@
 
 /* Additional Styles for Full-Width Sections */
 .category-row {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    height: auto;
+    display: block; /* Ensure sections are placed one below the other */
+    width: 100%; /* Occupy full width of the screen */
 }
 
 .movie-container {
-    width: 100%;
-    /* Ensure movie container spans full width */
-    max-width: 100%;
-    /* Allow the movie container to take the full width */
+    width: 100%; /* Ensure movie container spans full width */
+    max-width: 100%; /* Allow the movie container to take the full width */
 }
 
-/* root */
 
+
+/* root */
 :root{
     --main-color:#0064AD;
 }
@@ -578,7 +656,7 @@ section{
 
 
 body{
-    background-image: url('background1.jpg');
+    /* background-image: url('background1.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -683,4 +761,7 @@ body{
     }
 
 }
+
+
+
 
