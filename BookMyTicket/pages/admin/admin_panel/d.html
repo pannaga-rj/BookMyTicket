@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="d.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo"><img id="logo" src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2FBMT.png?alt=media" alt="BMT"></div>
+        <ul>
+            <li class="active" id="moviesTab"><i class="fas fa-film"></i> Movies</li>
+            <li id="theatresTab"><i class="fas fa-theater-masks"></i> Theatres</li>
+            <li id="reservationsTab"><i class="fas fa-ticket-alt"></i> Reservations</li>
+            <li id="usersTab"><i class="fas fa-users"></i> Users</li>
+            <li id="cityTab"><i class="fas fa-city"></i> City</li>
+        </ul>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Movies Section -->
+        <div id="moviesSection" class="content-section">
+            <div id="tableContainer">    
+                <button class="add-btn" id="addMovieBtn">Add Movie</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Poster</th>
+                            <th>Language</th>
+                            <th>Genre</th>
+                            <th>Director</th>
+                            <th>Trailer</th>
+                            <th>Description</th>
+                            <th>Duration</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Ratings</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="moviesTableBody"></tbody>
+
+                    <!-- displays rows -->
+                </table>
+            </div>
+        </div>
+
+        <!-- Add Movie Form -->
+        <div id="addMovieForm" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button" id="closeMovieForm">&times;</span>
+                <form id="movieForm">
+                    <h2>Add New Movie</h2>
+                    <input type="text" placeholder="Movie Title" id="movieTitle" required>
+                    <input type="text" placeholder="Language" id="language" required>
+                    <input type="text" placeholder="Genre" id="genre" required>
+                    <input type="text" placeholder="Director" id="director" required>
+                    <textarea placeholder="Trailer Link (iframe code)" id="trailerLink" required></textarea>
+                    <textarea placeholder="Description" id="description" required></textarea>
+                    <input type="text" placeholder="Duration" id="duration" required>
+                    <input type="date" id="startDate" required>
+                    <input type="date" id="endDate" required>
+                    <input type="number" placeholder="Ratings" id="ratings" required>
+                    <input type="text" placeholder="Category" id="category" required>
+                    <input type="file" id="posterImage" accept="image/*" required>
+                    <button type="submit">Add Movie</button>
+                </form>
+                
+            </div>
+        </div>
+        <div id="editMovieForm" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button" id="closeEMovieForm">&times;</span>
+                <form id="movieForm">
+                    <h2>Edit Movie</h2>
+
+                    <input type="text" placeholder="Movie Title" id="EmovieTitle" >
+                    <input type="text" placeholder="Language" id="Elanguage" >
+                    <input type="text" placeholder="Genre" id="Egenre" >
+                    <input type="text" placeholder="Director" id="Edirector" >
+                    <textarea placeholder="Trailer Link (iframe code)" id="EtrailerLink" ></textarea>
+                    <textarea placeholder="Description" id="Edescription" ></textarea>
+                    <input type="text" placeholder="Duration" id="Eduration" >
+                    <input type="date" id="EstartDate" >
+                    <input type="date" id="EendDate" >
+                    <input type="number" placeholder="Ratings" id="Eratings" >
+                    <input type="text" placeholder="Category" id="Ecategory" >
+                    <input type="file" id="EposterImage" accept="image/*" >
+                    <button type="Esubmit">Update Movie</button>
+                </form>
+                
+            </div>
+        </div>
+        <!-- Theatres Section -->
+        <div id="theatresSection" class="content-section hidden">
+            <div id="tableContainer">    
+                <button class="add-btn" id="addTheaterBtn">Add theater</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th style="text-align: center;">Theater Name</th>
+                            <th style="text-align: center;">City</th>
+                            <th style="text-align: center;">Ticket price</th>
+                            <th style="text-align: center;">Theater Image</th>
+                            <th style="text-align: center;">Movies and Showtimes</th>
+                            <th style="text-align: center;">Seating arrangement</th>
+                        </tr>
+                    </thead>
+                    <tbody id="theatersTableBody"></tbody>
+
+                    <!-- displays rows -->
+                </table>
+            </div>
+        </div>
+
+        <!-- Add Theater Form -->
+        <div id="addTheaterForm" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button" id="closetheaterForm">&times;</span>
+                <form id="theaterForm">
+                    <h2>Add New Theater</h2>
+                    <input type="text" placeholder="Theater Name" id="theaterTitle" required>
+                    <select id="city" required>
+                        <option value="">Select City</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <!-- Add more cities here -->
+                    </select>
+                    <input type="number" step="0.01" placeholder="Ticket price" id="ticketPrice" required>
+                    <input type="file" id="theaterImage" accept="image/*" required>
+                    
+                    <!-- Container for movie name inputs -->
+                    <div id="moviesContainer">
+                        <input type="text" id="movieNames" name="movieNames" placeholder="Enter movie name">
+                    </div>
+                    
+                    <!-- Add Movie Button -->
+                    <button type="button" id="addMovieFieldBtn">Add Movie</button>
+                
+                    <button type="submit">Add Theater</button>
+                </form>
+                
+                <script>
+                    // Function to dynamically add new movie input fields
+                    document.getElementById('addMovieFieldBtn').addEventListener('click', function() {
+                        const moviesContainer = document.getElementById('moviesContainer');
+                        const newMovieInput = document.createElement('input');
+                        newMovieInput.type = 'text';
+                        newMovieInput.name = 'movieNames';
+                        newMovieInput.placeholder = 'Enter movie name';
+                        newMovieInput.classList.add('movie-input'); // Optional: add a class for styling
+                        
+                        moviesContainer.appendChild(newMovieInput);
+                    });
+                </script>
+                
+                
+            </div>
+            
+        </div>
+        <div id="editTheaterForm" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-button" id="closeEtheaterForm">&times;</span>
+                <form id="EtheaterForm">
+                    <h2>Edit Theater</h2>
+                    <input type="text" placeholder="Theater Name" id="EtheaterTitle" >
+                    <select id="Ecity" >
+                        <option value="">Select City</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <!-- Add more cities here -->
+                    </select>
+                    <input type="number" step="0.01" placeholder="Ticket price" id="EticketPrice" >
+                    <input type="file" id="EtheaterImage" accept="image/*" >
+                    
+                    <!-- Container for movie name inputs -->
+                    <div id="EmoviesContainer">
+                        <input type="text" id="movieNames" name="movieNames" placeholder="Enter movie name">
+                    </div>
+                    
+                    <!-- Add Movie Button -->
+                    <button type="button" id="addEMovieFieldBtn">Add Movie</button>
+                
+                    <button type="submit">Update Theater</button>
+                </form>
+                
+                <script>
+                    // Function to dynamically add new movie input fields
+                    document.getElementById('addEMovieFieldBtn').addEventListener('click', function() {
+                        const moviesContainer = document.getElementById('EmoviesContainer');
+                        const newMovieInput = document.createElement('input');
+                        newMovieInput.type = 'text';
+                        newMovieInput.name = 'movieNames';
+                        newMovieInput.placeholder = 'Enter movie name';
+                        newMovieInput.classList.add('movie-input'); // Optional: add a class for styling
+                        
+                        moviesContainer.appendChild(newMovieInput);
+                    });
+                </script>
+                
+                
+            </div>
+            
+        </div>
+        <div id="showtimeModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" id="showtimeclosebtn">&times;</span>
+                <h2>Add Showtime</h2>
+                <form id="showtimeForm">
+                    <input type="hidden" id="showtimeIndex" name="showtimeIndex">
+                    <label for="showtime">Showtime:</label>
+                    <input type="text" id="showtime" name="showtime" required>
+                    <button type="submit">Add Showtime</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Other Sections Placeholder -->
+        <div id="reservationsSection" class="content-section hidden">
+            <h2>Reservations Section</h2>
+            <!-- Content goes here -->
+        </div>
+
+        <div id="usersSection" class="content-section hidden ">
+                <div id="tableContainer">    
+                    <table>
+                        <button class="add-btn" id="addUserBtn">Add User</button>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">#</th>
+                                <th style="text-align: center;">Name</th>
+                                <th style="text-align: center;">Email</th>
+                                <th style="text-align: center;">Phone no</th>
+                                <th style="text-align: center;">City</th>
+                                <th style="text-align: center;">Role</th>          
+                            </tr>
+                        </thead>
+                        <tbody id="UsersTableBody"></tbody>
+    
+                        <!-- displays rows -->
+                    </table>
+                </div>
+            </div>
+            <div id="addUsersForm" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-button" id="closeUserForm">&times;</span>
+                    <form id="UserForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" required>
+                        <label for="city">City:</label>
+                        <input type="text" id="UCity" name="city" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="button-group">
+                            <button type="button" id="createCollectionBtn">Register</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div id="editUsersForm" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-button" id="closeeUserForm">&times;</span>
+                    <form id="eUserForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="Ename" name="name">
+                        
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="Ephone" name="phone">
+                        
+                        <label for="city">City:</label>
+                        <input type="text" id="ECity" name="city">
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="Eemail" name="email">
+                       
+                                    
+                        <div class="button-group">
+                            <button type="button" id="editCollectionBtn">Update</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+        <div id="citySection" class="content-section hidden">
+            <h2>City Section</h2>
+            <!-- Content goes here -->
+        </div>
+    </div>
+
+
+     <!-- Trailer Section -->
+    <div id="trailerContainer" class="trailer hidden">
+        <iframe id="trailerFrame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <script src="d.js" type="module"></script>
+    <script src="login_users.js" type="module"></script>
+</body>
+</html>
