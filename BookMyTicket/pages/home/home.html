@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BMT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo"><span>Book</span>My<span>Ticket</span></a>
+
+        <nav class="navbar">
+            <a href="#Home">Home</a>
+            <a href="#Home">About</a>
+            <a href="login.html">Login/Register</a>   
+        </nav>
+
+        <div id="menu-bars" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header section ends -->
+
+   <!-- home section starts  -->
+
+   <section class="home" id="Home">
+
+    <div class="content">
+        <h3>"Your Favorite Films, Just a Click Away –   <span> Book Now, Enjoy Later!" </span></h3>
+    </div>
+
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide"><img src="..\..\assests\movie_posters\p1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p5.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p6.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="..\..\assests\movie_posters\p7.jpg" alt=""></div> -->
+            
+        </div>
+        <div class="swiper-pagination"></div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+
+<!-- gallery section starts -->
+<section class="gallery" id="gallery">
+<h1 class="heading">Our <span>Gallery</span></h1>
+<div id="dynamicContent" class="box-container">
+    <!-- Dynamic content will be injected here -->
+</div>
+</section>
+<!-- gallery section ends -->
+
+
+
+
+<!-- service section starts  -->
+
+<section class="service" id="Service">
+
+<h1 class="heading"> our <span>services</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">        
+        <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fuser_friendly.png?alt=media" alt="User Friendly Image">
+        <h3>User-friendly Interface</h3>
+        <p>Intuitive design for easy navigation and content creation.</p>
+    </div>
+
+    <div class="box">
+        <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fmovie_ticket.png?alt=media" alt="movie_ticket">
+        <h3>Easy Booking Process</h3>
+        <p>Book your movie tickets in just a few clicks with our intuitive, user-friendly interface.</p>
+    </div>
+
+    <div class="box">
+        <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fmovie_schedule.png?alt=media" alt="movie_schedule">
+        <h3>Movie Schedules</h3>
+        <p>Know all the current Schedules</p>
+    </div>
+
+    <div class="box">
+        <img src="https://firebasestorage.googleapis.com/v0/b/movie-ticket-booking-web-2e392.appspot.com/o/logos%2Fadmin_panel.png?alt=media" alt="admin_panel">
+        <h3>Admin Panel</h3>
+        <p>"Effortlessly manage movies, theaters, and reservations with our intuitive admin panel."</p>
+    </div>
+</div>
+
+</section>
+
+<!-- service section ends -->
+
+
+<!-- footer section starts  -->
+
+<section class="footer" style="background: #222; display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
+    <section class="feedback" id="feedback" style="margin-right: auto; margin-bottom: 40px;">
+        <h1 class="heading" style="font-size: 2.5rem; color: #157fcb; text-transform: uppercase; padding-bottom: .5rem;">
+            <span style="color: #0064AD;">News</span>Letter
+        </h1>
+        <form action="" method="post">
+            <div class="inputBox" style="display: flex; align-items: center;">
+                <input type="email" placeholder="email" name="email" required style="flex: 1; margin-right: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; background: #333; color: #ffffff;">
+                <button type="submit" style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">Subscribe</button>
+            </div>
+        </form>
+    </section>
+
+    <div class="box-container" style="display: flex; gap: 6rem;">
+        <div class="box" style="color: #fff; margin-right: 50px;">
+            <h3 style="font-size: 2.5rem; padding: 1rem 0;">Explore</h3>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">FAQs</a>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">Upcoming Movies</a>
+        </div>
+        <div class="box-container" style="display: flex; gap: 6rem;">
+            <div class="box" style="color: #fff; margin-right: 50px;">
+                <h3 style="font-size: 2.5rem; padding: 1rem 0;">Company</h3>
+                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">About Us</a>
+                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">Our Team</a>
+            </div>
+        <div class="box" style="color: #fff;">
+            <h3 style="font-size: 2.5rem; padding: 1rem 0; margin-right: 100px;">Contact Us</h3>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-facebook-f" style="padding-right: .5rem; color: var(--main-color);"></i> facebook</a>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-twitter" style="padding-right: .5rem; color: var(--main-color);"></i> twitter</a>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-instagram" style="padding-right: .5rem; color: var(--main-color);"></i> instagram</a>
+            <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-linkedin" style="padding-right: .5rem; color: var(--main-color);"></i> linkedin</a>
+        </div>
+    </div>
+
+  
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+
+
+<script src="home.js" type="module"></script>
+
+</body>
+
+</html>
