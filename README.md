@@ -17,6 +17,7 @@ Landing Page:
 
   Gallery Section
   ![Screenshot 2024-09-01 170340](https://github.com/user-attachments/assets/9a38e9bd-fc4a-4a44-8f99-f35b8e6bb927)
+  ![Screenshot 2024-09-01 170400](https://github.com/user-attachments/assets/ef505ccb-f371-412e-b36b-757de384e573)
 
 
 
@@ -28,8 +29,9 @@ Landing Page:
 
 
   Login / Registration Page
-  ![Screenshot 2024-09-01 170400](https://github.com/user-attachments/assets/ef505ccb-f371-412e-b36b-757de384e573)
-
+    ![Screenshot 2024-09-01 170417](https://github.com/user-attachments/assets/1717d395-a671-4c62-83a5-e9353ffc88b2)
+  ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
+    ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
 
 
 
@@ -37,20 +39,19 @@ Landing Page:
 
 
   About Us Page 
-  ![Screenshot 2024-09-01 170408](https://github.com/user-attachments/assets/3523d1b2-69fc-4e3b-aff0-d18a10fc13a1)
-  ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
-  ![Screenshot 2024-09-01 170520](https://github.com/user-attachments/assets/672ca5d6-8610-4e97-aedb-79c202aa1c5d)
+    ![Screenshot 2024-09-01 170549](https://github.com/user-attachments/assets/34e9203f-2eba-4291-ba9f-7bbd58554451)
+  ![Screenshot 2024-09-01 170614](https://github.com/user-attachments/assets/02a72eff-676f-4c86-b418-6f798e7274c8)
+
   
 
 
 
 
   Frequently asked Questions Page
-  ![Screenshot 2024-09-01 170417](https://github.com/user-attachments/assets/1717d395-a671-4c62-83a5-e9353ffc88b2)
-  ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
+
+
   ![Screenshot 2024-09-01 170520](https://github.com/user-attachments/assets/672ca5d6-8610-4e97-aedb-79c202aa1c5d)
-  ![Screenshot 2024-09-01 170549](https://github.com/user-attachments/assets/34e9203f-2eba-4291-ba9f-7bbd58554451)
-  ![Screenshot 2024-09-01 170614](https://github.com/user-attachments/assets/02a72eff-676f-4c86-b418-6f798e7274c8)
+
 
 
 
