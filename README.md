@@ -81,3 +81,6 @@ Admin side define seating:
   Booking Page:
 
   
+Customer Side booking seats:
+![image](https://github.com/user-attachments/assets/f24b0825-28b4-4f39-bbc0-8a5e5f281562)
+
