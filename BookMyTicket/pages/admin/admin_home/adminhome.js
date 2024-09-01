@@ -229,3 +229,40 @@ window.onload = function() {
     getTrendingMovies();
     generateGallery();
 };
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBars = document.getElementById('menu-bars');
+    const navbar = document.querySelector('.header .navbar');
+
+    menuBars.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+});
+
+
+
+
+document.getElementById('Subscribe').addEventListener('click', function() {
+    const emailInput = document.getElementById('email');
+    const emailValue = emailInput.value;
+
+    console.log('Email:', emailValue);
+
+    const emailContent = `
+                Thank you for subscribing to the BMT Newsletter! We're excited to have you on board.
+                You'll now receive the latest updates, news, and exclusive content straight to your inbox. Stay tuned for our upcoming newsletters!
+            `;
+    emailjs.send("service_5pp5umo", "template_gfpe14o", {
+            to_email: emailValue,
+            message: emailContent, 
+        })
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("You have successfully subscribed!!");
+            // window.location.href = "../customer/custo.html";
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("There was an error sending the confirmation email. Please try again.");
+        });
+});
