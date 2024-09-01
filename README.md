@@ -78,6 +78,7 @@ Admin side define seating:
 
 
   Booking Page:
+  
 
   
 Customer Side booking seats:
@@ -85,10 +86,13 @@ Customer Side booking seats:
 
 
 
+Billing Page:
 
 Payment Page:
 ![Screenshot 2024-09-01 171209](https://github.com/user-attachments/assets/e2de43a4-a00d-4c49-bc3f-b8c21d23432c)
 ![Screenshot 2024-09-01 171220](https://github.com/user-attachments/assets/44d13c6c-0902-4120-a7c8-0e8b0b410752)
+
+Your Tickets:
 
 
 Booking Confirmation Email
