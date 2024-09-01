@@ -16,6 +16,7 @@ Landing Page:
 
 
   Gallery Section
+  ![Screenshot 2024-09-01 170340](https://github.com/user-attachments/assets/9a38e9bd-fc4a-4a44-8f99-f35b8e6bb927)
 
 
 
