@@ -562,6 +562,10 @@ async function deleteTheater(id) {
     
 }
 
+document.getElementById('closeEMovieForm').addEventListener('click', function() {
+    document.getElementById("editMovieForm").classList.add("hidden");
+    document.getElementById("movieForm").reset();
+});
 
 // Fetch and display movies on page load
 async function fetchTheater() {
