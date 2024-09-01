@@ -477,7 +477,7 @@ function addTheaterToTable(TheaterData) {
         button.addEventListener('click', function() {
             sessionStorage.setItem('theaterData', JSON.stringify(TheaterData));
             sessionStorage.setItem('index', button.dataset.index);
-            window.location.href = 'seating1.html';
+            window.location.href = 'seating.html';
         });
     });
     
