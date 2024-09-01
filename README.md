@@ -45,19 +45,19 @@ Landing Page:
 
 
   Admin Panel:
-            Movie Section:
+  Movie Section:
 
 
 
 
-            Theatres Section:
+  Theatres Section:
 
 
 
-            Reservations Section:
+  Reservations Section:
 
 
-            Users:
+  Users:
 
 
 
