@@ -14,9 +14,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="customer.css">
-
-    
-
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "qeZ5ku6shP4h_Zx7z",
+        });
+    })();
+    </script>
 </head>
 
 <body>
@@ -28,7 +35,8 @@
     
         <nav class="navbar">
             <a href="#Home">Home</a>
-            <a href="#Home">Your Tickets</a>
+            <a href="#Service">Our Services</a>
+            <a href="your_tickets.html">Your Tickets</a>
             <div id="profile-container" class="profile-container">
                 <i id="profileIcon" class="fas fa-user"></i>
                 <div id="profileDropdown" class="profile-dropdown">
@@ -62,14 +70,16 @@
             <h3>"Your Favorite Films, Just a Click Away –   <span> Book Now, Enjoy Later!" </span></h3>
         </div>
 
-        <div class="swiper-container home-slider">
-            <div class="swiper-wrapper">
-                    <!-- Dynamic -->
+        <a href="#gallery">
+            <div class="swiper-container home-slider">
+                <div class="swiper-wrapper">
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
             </div>
-            <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-        </div>
+        </a>
 
     </section>
 
@@ -131,46 +141,53 @@
 
     
 
-    <!-- footer section starts  -->
+<!-- footer section starts  -->
+<section class="footer" style="background: #222; padding: 20px;">
+    <section class="feedback" id="feedback" style="margin-bottom: 40px;">
+        <h1 class="heading" style="font-size: 2.5rem; color: #157fcb; text-transform: uppercase; padding-bottom: .5rem;">
+            <span style="color: #0064AD;">News</span>Letter
+        </h1>
+        <form id="subscribeForm">
+    <div class="inputBox" style="display: flex; align-items: center;">
+        <input id="email" type="email" placeholder="email" name="email" required style="flex: 1; margin-right: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; background: #333; color: #ffffff;">
+        <button type="button" id="Subscribe" style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">Subscribe</button>
+    </div>
+</form>
 
-    <section class="footer" style="background: #222; display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
-        <section class="feedback" id="feedback" style="margin-right: auto; margin-bottom: 40px;">
-            <h1 class="heading" style="font-size: 2.5rem; color: #157fcb; text-transform: uppercase; padding-bottom: .5rem;">
-                <span style="color: #0064AD;">News</span>Letter
-            </h1>
-            <form action="" method="post">
-                <div class="inputBox" style="display: flex; align-items: center;">
-                    <input type="email" placeholder="email" name="email" required style="flex: 1; margin-right: 10px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; background: #333; color: #ffffff;">
-                    <button type="submit" style="padding: 10px 20px; border: none; background-color: #007bff; color: white; border-radius: 4px; cursor: pointer;">Subscribe</button>
-                </div>
-            </form>
-        </section>
-    
-        <div class="box-container" style="display: flex; gap: 6rem;">
-            <div class="box" style="color: #fff; margin-right: 50px;">
-                <h3 style="font-size: 2.5rem; padding: 1rem 0;">Explore</h3>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">FAQs</a>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">Upcoming Movies</a>
-            </div>
-            <div class="box-container" style="display: flex; gap: 6rem;">
-                <div class="box" style="color: #fff; margin-right: 50px;">
-                    <h3 style="font-size: 2.5rem; padding: 1rem 0;">Company</h3>
-                    <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">About Us</a>
-                    <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;">Our Team</a>
-                </div>
-            <div class="box" style="color: #fff;">
-                <h3 style="font-size: 2.5rem; padding: 1rem 0; margin-right: 100px;">Contact Us</h3>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-facebook-f" style="padding-right: .5rem; color: var(--main-color);"></i> facebook</a>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-twitter" style="padding-right: .5rem; color: var(--main-color);"></i> twitter</a>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-instagram" style="padding-right: .5rem; color: var(--main-color);"></i> instagram</a>
-                <a href="#" style="display: block; font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-linkedin" style="padding-right: .5rem; color: var(--main-color);"></i> linkedin</a>
-            </div>
-        </div>
-    
-      
     </section>
-    
-    <!-- footer section ends -->
+</section>
+
+
+<div class="panel2">
+    <ul>
+        <h3 style="font-size: 2.5rem; padding: 1rem 0;">Explore</h3>
+        <li><a href="../home/faq.html" target="_blank" style="font-size: 1.5rem; padding: 1rem 0; color: #eee;">FAQs</a></li>
+        <li><a href="#gallery" style="font-size: 1.5rem; padding: 1rem 0; color: #eee;">Upcoming Movies</a></li>
+    </ul>
+    <ul>
+        <li> <h3 style="font-size: 2.5rem; padding: 1rem 0;">Company</h3></li>
+        <li> <a href="../home/about.html" target="_blank" style="font-size: 1.5rem; padding: 1rem 0; color: #eee;">About Us</a></li>
+        <li> <a href="../home/about.html" target="_blank" style="font-size: 1.5rem; padding: 1rem 0; color: #eee;">Our Team</a></li>
+    </ul>
+ 
+    <ul>
+       <li><h3 style="font-size: 2.5rem; padding: 1rem 0;">Contact Us</h3></li>
+       <li><a href="https://wa.me/8660743840" target="_blank"style="font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-whatsapp" style="padding-right: .5rem; color: #eee;"></i> Whatsapp</a></li> 
+       <li> <a href="tel:8660743840" target="_blank" style="font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fas fa-phone-alt" style="padding-right: .5rem; color: #eee;"></i> Call </a></li> 
+        <li><a href="https://www.instagram.com/bmt_nppp/" target="_blank"style="font-size: 1.5rem; padding: 1rem 0; color: #eee;"><i class="fab fa-instagram" style="padding-right: .5rem; color: #eee;"></i> Instagram</a></li> 
+    </ul>
+</div>
+
+
+<div class="copyright"><div><p id="copyrights">&copy; 2024 All Rights Reserved | Team BMT</p></div></div>
+
+<!-- footer section ends -->
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     
 
@@ -182,7 +199,7 @@
 
 
     <script src="customer.js" type="module"></script>
-
+    
 </body>
 
 </html>
