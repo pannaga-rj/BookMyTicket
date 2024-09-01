@@ -80,6 +80,11 @@ async function registerUser(evt) {
         return;
     }
 
+    if (!validateCity(city)) {
+        alert('Invalid City');
+        return;
+    }
+
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
@@ -140,6 +145,14 @@ function validatePhone(phone) {
     const phonePattern = /^[0-9]{10}$/;
     return phonePattern.test(phone);
 }
+
+// 
+function validateCity(city) {
+    // Regular expression to allow letters, spaces, hyphens, and apostrophes.
+    const cityPattern = /^[a-zA-Z\s'-]+$/;
+    return cityPattern.test(city);
+}
+
 
 // Redirect to home page
 document.getElementById('homeBtnLogin').addEventListener('click', function() {
