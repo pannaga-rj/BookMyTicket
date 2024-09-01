@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #5ab4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    z-index: 10000;
+    height: 4rem; /* Adjust height */
+}
+
+.header .logo {
+    font-weight: bolder;
+    color: #81cbff;
+    font-size: 3rem; /* Adjust font size */
+}
+
+.header .logo span {
+    color: #0064AD;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+.header .navbar a {
+    font-size: 1.8rem; /* Adjust font size */
+    color: #0064AD;
+    margin-left: 1.5rem; /* Adjust margin */
+    text-decoration: none;
+}
+
+.header .navbar a:hover {
+    color: #004a7c; /* Darker shade on hover */
+}
+
+#menu-bars {
+    font-size: 2.5rem; /* Adjust font size */
+    color: #0064AD;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+/* Profile Container Styles */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+#profileIcon {
+    padding-left: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#profileIcon:hover {
+    color: #0056b3;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjusted for a better view */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px; /* Enlarged width */
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.profile-dropdown button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.profile-dropdown .close-dropdown {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.profile-dropdown .close-dropdown:hover {
+    color: #000;
+}
+
+#profileDetails {
+    margin-top: 10px;
+}
+
+#profileDetails p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Reservations Section */
+.main-content {
+    margin-top: 5rem; /* Adjust for reduced header size */
+    padding: 1rem 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    overflow-x: auto; /* Allow horizontal scroll on smaller screens */
+    display: block; /* Make the table block for overflow to work */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem; /* Adjust font size */
+}
+
+table th {
+    background-color: #0064AD;
+    color: #fff;
+    font-weight: 600;
+}
+
+table td img {
+    width: 100px;
+    height: auto;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+table tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header .navbar {
+        display: none; /* Hide navbar on smaller screens */
+        width: 100%; /* Full width */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position below header */
+        top: 4rem; /* Adjust top position */
+        left: 0;
+        background: #5ab4f4; /* Match header background */
+        z-index: 1000;
+    }
+
+    .header .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    #menu-bars {
+        display: inline-block; /* Show hamburger icon */
+    }
+}
+
+@media (max-width: 600px) {
+    .header .logo {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+
+    .header .navbar a {
+        font-size: 1.5rem; /* Adjust font size */
+        margin-left: 1rem; /* Adjust margin */
+    }
+
+    table th, table td {
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}
+
+
+a{
+    text-decoration: none;
+}
