@@ -393,3 +393,108 @@ section {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+
+
+.footer {
+    background: #222;
+    padding: 20px;
+    color: #fff;
+}
+
+.box-container {
+    display: flex; /* Arrange child elements in a row */
+    align-items: flex-start; /* Align items to the top of the container */
+    justify-content: space-between; /* Distribute space between boxes */
+    gap: 2rem; /* Space between boxes */
+    flex-wrap: wrap; /* Allow wrapping if the viewport is too narrow */
+}
+
+.box {
+    color: #fff;
+    flex: 1; /* Allow boxes to grow equally */
+    min-width: 200px; /* Minimum width for each box */
+}
+
+.box h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
+    text-decoration: none;
+}
+
+.box a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically on small screens */
+        gap: 1rem;
+    }
+}
+
+
+.panel2 {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space evenly between panels */
+    gap: 2rem; /* Space between panels */
+    padding: 2rem;
+    background: #222; /* Background color for the panel */
+    color: #fff; /* Text color */
+}
+
+.panel2 ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.panel2 h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.panel2 li {
+    margin-bottom: 1rem; /* Space between list items */
+}
+
+.panel2 a {
+    font-size: 1.5rem;
+    color: #eee;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.panel2 a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.panel2 .contact img {
+    vertical-align: middle; /* Align image with text */
+    margin-right: 0.5rem; /* Space between image and text */
+    width: 24px; /* Adjust width as needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel2 {
+        flex-direction: column; /* Stack panels vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
+    }
+
+    .panel2 ul {
+        margin-bottom: 2rem; /* Space between stacked lists */
+    }
+
+    .panel2 .contact img {
+        width: 20px; /* Adjust image size on smaller screens */
+    }
+}
