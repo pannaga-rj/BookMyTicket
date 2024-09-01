@@ -1,8 +1,12 @@
 BookMyTicket: Your favourite movie booking website.
 
-To access admin panel log-in through.
+To access admin panel log-in through,
 email: bookmyticket@gmail.com.
 password: bookmyticket
+
+To book tickets, please use valid gmail id as we send confirmation tickets to users.
+
+Currently, we have implemented booking process for Users residing in Bengaluru and Mumbai.(Please use this city while registration) 
 
 Landing Page:
                             ![alt text](https://github.com/user-attachments/assets/8c2d334d-7830-4c91-8360-1ebd3950cc33)
