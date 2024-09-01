@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
+.copyright {
+    display: flex;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+}
+
+#copyrights {
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+
 /* Profile Container Styles */
 .profile-container {
     position: relative;
@@ -239,57 +255,81 @@ section{
     padding:2rem 9%;
 }
 
-.heading{
-    text-align: center;
-    padding-bottom: 2rem;
-    color:#157fcb;
-    text-transform: uppercase;
-    font-size: 4rem;
-}
-
-.heading span{
-    color:var(--main-color);
-    text-transform: uppercase;
-}
-
-
-.header{
+/* Header Styles */
+.header {
     position: fixed;
-    top:0; left: 0; right: 0;
+    top: 0; 
+    left: 0; 
+    right: 0;
     z-index: 10000;
-    background:#5ab4f4;
+    background: #5ab4f4;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:1.5rem 9%;
+    padding: 1.5rem 9%;
 }
 
-.header .logo{
+.header .logo {
     font-weight: bolder;
-    color:#81cbff;
+    color: #81cbff;
     font-size: 5rem;
 }
 
-.header .logo span{
-    color:var(--main-color);
+.header .logo span {
+    color: var(--main-color);
 }
 
-.header .navbar a{
+.header .navbar {
+    display: flex;
+    align-items: center;
+}
+
+.header .navbar a {
     font-size: 2.5rem;
-    color:#0064AD;
+    color: #0064AD;
     margin-left: 2rem;
 }
 
-.header .navbar a:hover{
-    color:var(--main-color);
+.header .navbar a:hover {
+    color: var(--main-color);
 }
 
-#menu-bars{
+#menu-bars {
     font-size: 3rem;
-    color:#0064AD;
+    color: #0064AD;
     cursor: pointer;
     display: none;
 }
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .header .navbar {
+        display: none;
+        width: 100%;
+        background: #5ab4f4;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        z-index: 10000;
+    }
+
+    .header .navbar.active {
+        display: flex;
+    }
+
+    .header .navbar a {
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+
+    #menu-bars {
+        display: block;
+    }
+}
+
 
 .home .content{
     text-align: center;
@@ -418,120 +458,105 @@ section{
     font-size: 1.6rem;
     color:#eee;
 }
-footer {
-    background: #0064AD;
-    padding: 2rem;
+.footer {
+    background: #222;
+    padding: 20px;
     color: #fff;
 }
 
-.footer-container {
-    display: flex; /* Use Flexbox for side-by-side layout */
-    flex-wrap: wrap; /* Allow wrapping if there are too many items */
-    justify-content: space-between; /* Distribute space between items */
-    max-width: 120rem;
-    margin: 0 auto;
+.box-container {
+    display: flex; /* Arrange child elements in a row */
+    align-items: flex-start; /* Align items to the top of the container */
+    justify-content: space-between; /* Distribute space between boxes */
+    gap: 2rem; /* Space between boxes */
+    flex-wrap: wrap; /* Allow wrapping if the viewport is too narrow */
 }
 
-.footer-box {
-    flex: 1 1 auto; /* Allow boxes to grow and shrink as needed */
-    margin: 1rem;
-    min-width: 200px; /* Minimum width for each footer box */
-}
-
-.footer-box h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.footer-box p,
-.footer-box a {
-    font-size: 1.6rem;
+.box {
     color: #fff;
-    line-height: 1.7;
+    flex: 1; /* Allow boxes to grow equally */
+    min-width: 200px; /* Minimum width for each box */
 }
 
-.footer-box a {
+.box h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #eee;
     text-decoration: none;
 }
 
-.footer-box a:hover {
+.box a:hover {
     text-decoration: underline;
 }
 
-.footer-bottom {
-    margin-top: 2rem;
-    text-align: center;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically on small screens */
+        gap: 1rem;
+    }
 }
 
-.footer-bottom p {
+
+.panel2 {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space evenly between panels */
+    gap: 2rem; /* Space between panels */
+    padding: 2rem;
+    background: #222; /* Background color for the panel */
+    color: #fff; /* Text color */
+}
+
+.panel2 ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.panel2 h3 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.panel2 li {
+    margin-bottom: 1rem; /* Space between list items */
+}
+
+.panel2 a {
     font-size: 1.5rem;
+    color: #eee;
+    text-decoration: none; /* Remove underline from links */
 }
 
-.footer-bottom p span {
-    color: var(--main-color);
+.panel2 a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
-
-/* Media Queries */
-@media (max-width:991px){
-
-    html{
-        font-size: 55%;
-    }
-
-    .header .navbar{
-        position: absolute;
-        top:100%; left:0; right: 0;
-        background: #444;
-        border-top: .1rem solid rgba(255, 255, 255, .2);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-
-    .header .navbar.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .header .navbar a{
-        color:#fff;
-        margin:2rem;
-        padding:1.5rem;
-        font-size: 2.5rem;
-        display: block;
-        background:#333;
-    }
-
-    #menu-bars{
-        display: inline-block;
-    }
-
-    #menu-bars.active i{
-        transform: rotate(180deg);
-    }
-
+.panel2 .contact img {
+    vertical-align: middle; /* Align image with text */
+    margin-right: 0.5rem; /* Space between image and text */
+    width: 24px; /* Adjust width as needed */
 }
 
-@media (max-width:768px){
-
-    .service .box-container{
-        grid-template-columns: 1fr;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel2 {
+        flex-direction: column; /* Stack panels vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
     }
 
-    .home .home-slider .swiper-slide{
-        height: auto;
-        width: auto;
+    .panel2 ul {
+        margin-bottom: 2rem; /* Space between stacked lists */
     }
 
+    .panel2 .contact img {
+        width: 20px; /* Adjust image size on smaller screens */
+    }
 }
-
-@media (max-width:400px){
-
-    html{
-        font-size: 50%;
-    }
-
-    .about .row .content .icons-container .icons{
-        padding:.5rem 1.5rem;
-    }
-
-}
-
