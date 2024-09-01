@@ -1,4 +1,4 @@
-BookMyTicket: Your favourite movie booking website.
+![Screenshot 2024-09-01 170740](https://github.com/user-attachments/assets/e5ec44e9-cd85-4f11-ba81-a88bb5351d87)BookMyTicket: Your favourite movie booking website.
 
 To access admin panel log-in through.
 email: bookmyticket@gmail.com.
@@ -38,8 +38,9 @@ Landing Page:
 
   About Us Page 
   ![Screenshot 2024-09-01 170408](https://github.com/user-attachments/assets/3523d1b2-69fc-4e3b-aff0-d18a10fc13a1)
-
-
+  ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
+  ![Screenshot 2024-09-01 170520](https://github.com/user-attachments/assets/672ca5d6-8610-4e97-aedb-79c202aa1c5d)
+  
 
 
 
