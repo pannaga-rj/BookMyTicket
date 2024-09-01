@@ -157,3 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 })    
+
+document.getElementById("backBtn").addEventListener("click", async function () {
+    window.location.href = "d.html";
+});
