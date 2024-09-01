@@ -212,9 +212,9 @@ const db = getFirestore(app);
         }
 
         const currentDate = new Date();
-        const [expiryMonth, expiryYear] = expiryDate.split('/').map(Number);
+        const [expiryYear, expiryMonth] = expiryDate.split('-').map(Number);
         const expiry = new Date(expiryYear, expiryMonth - 1);
-
+       
         if (!expiryDate || expiry < currentDate) {
             isValid = false;
             alert("Expiry date is invalid or has passed.");
