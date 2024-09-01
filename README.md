@@ -83,3 +83,8 @@ Admin side define seating:
 Customer Side booking seats:
 ![image](https://github.com/user-attachments/assets/f24b0825-28b4-4f39-bbc0-8a5e5f281562)
 
+Booking Confirmation Email
+![Screenshot 2024-09-01 171522](https://github.com/user-attachments/assets/6b801578-7334-4113-a508-77398015008b)
+
+NewsLetter Subscription Email
+![Screenshot 2024-09-01 171557](https://github.com/user-attachments/assets/1afea266-1896-4b59-b248-8164464e7531)
