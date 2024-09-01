@@ -1,4 +1,4 @@
-BookMyTicket: Your favourite movie booking website.
+**BookMyTicket**: Your favourite movie booking website.
 
 To access admin panel log-in through,
 email: bookmyticket@gmail.com.
