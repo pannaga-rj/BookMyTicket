@@ -285,3 +285,7 @@ select:focus {
     transform: scale(1.05); /* Slight scaling effect for interaction feedback */
 }
 
+a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the color from its parent element */
+}
