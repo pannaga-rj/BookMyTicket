@@ -1,3 +1,4 @@
+// Firebase imports and initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -19,7 +20,22 @@ const db = getFirestore(app);
 const auth = getAuth();
 
 // User login
-document.getElementById('loginBtn').addEventListener('click', async function(evt) {
+document.getElementById('loginBtn').addEventListener('click', loginUser);
+document.getElementById('createCollectionBtn').addEventListener('click', registerUser);
+
+// Add Enter key functionality
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const activeTab = document.querySelector('.tab-content.active');
+        if (activeTab.id === 'loginContent') {
+            loginUser(event);
+        } else if (activeTab.id === 'registerContent') {
+            registerUser(event);
+        }
+    }
+});
+
+async function loginUser(evt) {
     evt.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
@@ -43,10 +59,9 @@ document.getElementById('loginBtn').addEventListener('click', async function(evt
         console.error('Error logging in: ', error);
         alert('Error logging in.');
     });
-});
+}
 
-// User registration
-document.getElementById('createCollectionBtn').addEventListener('click', async function(evt) {
+async function registerUser(evt) {
     evt.preventDefault();
     
     const name = document.getElementById('name').value;
@@ -66,19 +81,16 @@ document.getElementById('createCollectionBtn').addEventListener('click', async f
     }
 
     try {
-        // Create the user in Firebase Authentication
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        // Check if the user is an admin
         const adminDoc = await getDoc(doc(db, "Admin", email));
-        let role = 'customer'; // Default role
+        let role = 'customer'; 
         
         if (adminDoc.exists()) {
-            role = 'admin'; // Set role as admin if email is found in admins collection
+            role = 'admin'; 
         }
 
-        // Create the user document in Firestore without storing the password
         const userData = {
             name: name,
             email: email,
@@ -91,7 +103,7 @@ document.getElementById('createCollectionBtn').addEventListener('click', async f
         await setDoc(doc(db, "Users", user.uid), userData);
 
         alert("User registered successfully!");
-        document.getElementById('loginTab').click(); // Switch to login tab
+        document.getElementById('loginTab').click();
     } catch (error) {
         console.error('Error registering user: ', error);
         if (error.code === 'auth/email-already-in-use') {
@@ -100,7 +112,7 @@ document.getElementById('createCollectionBtn').addEventListener('click', async f
             display_message('Error registering user.', "signup_message");
         }
     }
-});
+}
 
 // Tab switching
 document.getElementById('loginTab').addEventListener('click', function() {
@@ -125,7 +137,7 @@ function validateEmail(email) {
 
 // Function to validate phone number
 function validatePhone(phone) {
-    const phonePattern = /^[0-9]{10}$/; // Assuming a 10-digit phone number
+    const phonePattern = /^[0-9]{10}$/;
     return phonePattern.test(phone);
 }
 
@@ -144,7 +156,7 @@ function display_message(message, divid) {
     msg_div.style.display = 'block';
     msg_div.innerHTML = message;
     msg_div.style.opacity = 1;
-    setTimeout(function(){
+    setTimeout(function() {
         msg_div.style.opacity = 0;
     }, 5000);
 }
