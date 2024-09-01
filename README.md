@@ -23,9 +23,8 @@ Landing Page:
 
 
 
-  Services and Footer Section
-
-
+Services and Footer
+![WhatsApp Image 2024-09-01 at 18 28 55_0a947da8](https://github.com/user-attachments/assets/561738cd-195e-4e93-8b66-b5ecb1ee97f3)
 
 
   Login / Registration Page
