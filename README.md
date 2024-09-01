@@ -47,6 +47,7 @@ Landing Page:
 
   Admin Panel:
   Movie Section:
+  ![Screenshot 2024-09-01 170740](https://github.com/user-attachments/assets/9e7d3ad4-c52a-474b-997c-34c0c42cfbfb)
 
 
 
