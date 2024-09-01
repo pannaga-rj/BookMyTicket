@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Details</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="your_tickets.css">
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+         <!-- header section starts  -->
+
+    <header class="header">
+        <a href="#" class="logo"><span>Book</span>My<span>Ticket</span></a>
+    
+        <nav class="navbar">
+            <a id="Home" href="#">Home</a>
+            <a href="#Service">Our Services</a>
+            <a href="#">Your Tickets</a>
+            <div id="profile-container" class="profile-container">
+                <i id="profileIcon" class="fas fa-user"></i>
+                <div id="profileDropdown" class="profile-dropdown">
+                    <button id="closeProfileDropdown" class="close-dropdown">×</button>
+                    <div id="profileDetails">
+                        <p id="profileName"></p>
+                        <p id="profileEmail"></p>
+                        <p id="profileCity"></p>
+                        <p id="profilePhone"></p>
+                        <button id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+        <div id="menu-bars" class="fas fa-bars"></div>
+    </header>
+
+        <main>
+            <section>
+                <div id="reservationsContent" class="reservations-content">
+                    <!-- Reservation Table -->
+                    <div id="tableContainer">
+                        <table id="reservationsTable">
+                            <thead>
+                                <!-- Headers will be dynamically inserted here -->
+                            </thead>
+                            <tbody id="reservationsTableBody">
+                                <!-- Reservation rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="your_tickets.js"></script>
+</body>
+
+</html>
