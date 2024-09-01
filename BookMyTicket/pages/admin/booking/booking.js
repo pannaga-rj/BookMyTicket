@@ -96,6 +96,34 @@ if (movieData) {
 
 
 
+
+document.getElementById('home').addEventListener('click', async (event) => {
+    event.preventDefault(); // Prevent default link behavior
+
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            try {
+                const userEmail = user.email;
+                const adminDocRef = doc(db, 'Admin', userEmail); // Get the document reference
+                const adminDoc = await getDoc(adminDocRef); // Get the document
+
+                if (adminDoc.exists()) {
+                    // Document exists, user is an admin
+                    window.location.href = '../admin_home/adminhome.html';
+                } else {
+                    window.location.href = "../../customer/customerhome.html";
+                }
+            } catch (error) {
+                console.error('Error checking admin status:', error);
+                // alert('An error occurred while checking admin status.');
+            }
+        } else {
+            // alert('No user is currently signed in.');
+        }
+    });
+});
+
+
 // date
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', () => {
