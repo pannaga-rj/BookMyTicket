@@ -74,6 +74,9 @@ Landing Page:
   Users:
 ![Screenshot 2024-09-01 170811](https://github.com/user-attachments/assets/9ec92299-81ba-4f8d-bc32-41e05ec60f53)
 
+Admin side define seating:
+![image](https://github.com/user-attachments/assets/6f1f9efb-db79-4e9f-8f33-8794eddbaf58)
+
 
   Booking Page:
 
