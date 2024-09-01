@@ -137,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
         dateBox.addEventListener('click', () => {
             document.querySelectorAll('.date-box').forEach(box => box.classList.remove('selected'));
             dateBox.classList.add('selected');
+             // Store the selected date in sessionStorage
+            const selectedDate = `${day} ${date} ${month}`;
+            sessionStorage.setItem('selectedDate', selectedDate);
             fetchAndRenderTheatres();
         });
 
@@ -208,6 +211,7 @@ function renderTheatres(theatres) {
 
     theatres.forEach(theatre => {
         const theatreBox = document.createElement('div');
+
         theatreBox.classList.add('theatre-box');
 
         theatreBox.innerHTML = `<h4>${theatre.Name}</h4>`;
@@ -233,10 +237,6 @@ function renderTheatres(theatres) {
                 }
             });
         }
-
-        console.log(showtimes);
-        // let l = showtimes[0].split(',');
-        // console.log("L", l);
         
         
         // // If showtimes were found, render them
@@ -253,8 +253,17 @@ function renderTheatres(theatres) {
                 showtimeBox.addEventListener('click', () => {
                     // Store the selected movie, theatre, and showtime in localStorage
                     localStorage.setItem('selectedMovie', JSON.stringify(movieData));
-                    localStorage.setItem('selectedTheatre', JSON.stringify(theatre));
+                    localStorage.setItem('theaterData', JSON.stringify(theatre));
                     localStorage.setItem('selectedShowtime', time);
+                      // Store the selected date
+                    const selectedDate = sessionStorage.getItem('selectedDate');
+                    localStorage.setItem('selectedDate', selectedDate);
+
+                    console.log("title", movieData.title);
+                    console.log("Thn", theatre.Name);
+                    console.log("sTsime", time);
+                    console.log("Date", selectedDate);
+
 
                     // Redirect to seating1.html
                     window.location.href = '../admin_panel/seating1.html';
