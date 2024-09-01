@@ -62,7 +62,7 @@ onAuthStateChanged(auth, (user) => {
         });
     } else {
         // Redirect to home page if no user is authenticated
-        window.location.href = '../../home/home.html';
+        window.location.href = '../home/home.html';
     }
 });
 
@@ -117,6 +117,7 @@ async function getTrendingMovies() {
         console.error('Error fetching documents: ', error);
     }
 }
+
 async function generateGallery() {
     try {
         const querySnapshot = await getDocs(collection(db, 'Movies'));
@@ -133,6 +134,7 @@ async function generateGallery() {
         };
 
         const dynamicContent = document.getElementById('dynamicContent');
+        dynamicContent.innerHTML = ''; // Clear existing content
 
         categories.forEach(category => {
             const categoryMovies = getdata.filter(movie => movie.category.includes(category));
@@ -148,9 +150,9 @@ async function generateGallery() {
                 categoryTitle.textContent = categoryTitles[category];
                 categoryRow.appendChild(categoryTitle);
 
-                // Create Movie Container (Scrollable Row)
+                // Create Movie Container
                 const movieContainer = document.createElement('div');
-                movieContainer.classList.add('movie-container');
+                movieContainer.classList.add('movie-container', 'scrollable');
 
                 // Create Movie Cards
                 categoryMovies.forEach(movie => {
@@ -177,8 +179,8 @@ async function generateGallery() {
                     bookButton.classList.add('book-btn');
                     bookButton.textContent = 'Book';
                     bookButton.addEventListener('click', () => {
-                        window.location.href = '../booking/book.html';
-                        alert(`You have booked tickets for "${movie.title}"`);
+                        localStorage.setItem('movieData', JSON.stringify(movie));
+                        window.location.href = '../admin/booking/booking.html';
                     });
 
                     movieInfo.appendChild(movieTitle);
@@ -200,6 +202,8 @@ async function generateGallery() {
     }
 }
 
+// Call the function to generate the gallery when the page loads
+document.addEventListener('DOMContentLoaded', generateGallery);
 
 // MENU
 let menu = document.querySelector('#menu-bars');
@@ -228,3 +232,27 @@ window.onload = function() {
 
 
 
+
+document.getElementById('Subscribe').addEventListener('click', function() {
+    const emailInput = document.getElementById('email');
+    const emailValue = emailInput.value;
+
+    console.log('Email:', emailValue);
+
+    const emailContent = `
+                Thank you for subscribing to the BMT Newsletter! We're excited to have you on board.
+                You'll now receive the latest updates, news, and exclusive content straight to your inbox. Stay tuned for our upcoming newsletters!
+            `;
+    emailjs.send("service_5pp5umo", "template_gfpe14o", {
+            to_email: emailValue,
+            message: emailContent, 
+        })
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("You have successfully subscribed!!");
+            // window.location.href = "../customer/custo.html";
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("There was an error sending the confirmation email. Please try again.");
+        });
+});
