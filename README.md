@@ -81,7 +81,6 @@ Admin side define seating:
 
 ![Screenshot 2024-09-01 191019](https://github.com/user-attachments/assets/303672c0-febf-4ede-a418-8db6a49a4679)
 
-![Screenshot 2024-09-01 191054](https://github.com/user-attachments/assets/a01fab3d-c8e3-4fd8-8d74-a7fa98c6b16e)
 
   
 Customer Side booking seats:
