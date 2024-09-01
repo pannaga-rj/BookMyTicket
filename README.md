@@ -53,15 +53,15 @@ Landing Page:
 
 
   Theatres Section:
-
+![Screenshot 2024-09-01 170750](https://github.com/user-attachments/assets/1eb3a9b1-1c1b-4270-93fb-68de187de95a)
 
 
   Reservations Section:
+![Screenshot 2024-09-01 170758](https://github.com/user-attachments/assets/810d433b-3284-45c3-a4af-c5d74409688e)
 
 
   Users:
-
-
+![Screenshot 2024-09-01 170811](https://github.com/user-attachments/assets/9ec92299-81ba-4f8d-bc32-41e05ec60f53)
 
 
   Booking Page:
