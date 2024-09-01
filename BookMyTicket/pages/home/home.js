@@ -176,7 +176,7 @@ querySnapshot.forEach((doc) => {
                 bookButton.classList.add('book-btn');
                 bookButton.textContent = 'Book';
                 bookButton.addEventListener('click', () => {
-                    alert(`You have booked tickets for "${movie.title}"`);
+                    window.location.href = "login.html";
                 });
 
                 movieInfo.appendChild(movieTitle);
@@ -227,3 +227,18 @@ window.onload = function() {
   });
     generateGallery();
 };
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuBars = document.getElementById('menu-bars');
+        const navbar = document.querySelector('.header .navbar');
+
+        menuBars.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    });
+
