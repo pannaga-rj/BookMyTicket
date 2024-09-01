@@ -31,7 +31,7 @@ Landing Page:
   Login / Registration Page
     ![Screenshot 2024-09-01 170417](https://github.com/user-attachments/assets/1717d395-a671-4c62-83a5-e9353ffc88b2)
   ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
-    ![Screenshot 2024-09-01 170424](https://github.com/user-attachments/assets/73e78266-7230-4454-9f2e-f651aeb6eda0)
+  
 
 
 
