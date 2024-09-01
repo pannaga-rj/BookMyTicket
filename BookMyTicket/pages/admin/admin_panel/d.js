@@ -943,7 +943,7 @@ document.getElementById('eResForm').addEventListener('submit', async function(e)
 document.getElementById("ResTableBody").addEventListener("click", function(event) {
     if (event.target.classList.contains("delete-link")) {
         const id = event.target.getAttribute("data-id");
-        if (confirm("Are you sure you want to delete this movie?")) {
+        if (confirm("Are you sure you want to delete this Reservation?")) {
             deleteRes(id);
         }
     } else if (event.target.classList.contains("edit-link")) {
