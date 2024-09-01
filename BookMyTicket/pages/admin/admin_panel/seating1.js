@@ -25,13 +25,33 @@ document.addEventListener("DOMContentLoaded", async function () {
     const seatsGrid = document.getElementById("seats-grid");
     let selectedSeats = [];
 
-    const theaterData = JSON.parse(sessionStorage.getItem('theaterData'));
-    const index = sessionStorage.getItem('index');
+    // const theaterData = JSON.parse(sessionStorage.getItem('theaterData'));
+    // const index = sessionStorage.getItem('index');
 
-    if (theaterData && index !== null) {
-        document.querySelector(".TheaterName").innerText = theaterData.Name;
-        tid = theaterData.id;
-        seats = theaterData.Seats;
+    // Retrieve selected movie, theatre, and showtime from localStorage
+
+
+    const selectedMovie = JSON.parse(localStorage.getItem('selectedMovie'));
+    const selectedTheatre = JSON.parse(localStorage.getItem('theaterData'));
+    const selectedShowtime = localStorage.getItem('selectedShowtime');
+    // Retrieve the selected date from sessionStorage
+    let selectedDate = sessionStorage.getItem('selectedDate');
+    
+    let search_id = `${selectedTheatre.Name}_${selectedMovie.title}_${selectedDate}_${selectedShowtime}`;
+
+    // console.log("sadad",selectedTheatre);
+    
+    
+    
+
+    if (selectedTheatre) {
+        document.querySelector(".TheaterName").innerText = selectedTheatre.Name;
+        if(selectedDate == null)
+            selectedDate = "select Date";
+
+        document.querySelector(".showTime").innerHTML = `<b>${selectedMovie.title} ${selectedDate} ${selectedShowtime}</b>`;
+        tid = selectedTheatre.id;
+        seats = selectedTheatre.Seats;
     } else {
         console.error('TheaterData or index is missing or null');
         return; // Stop execution if there's an error
@@ -41,8 +61,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
         const reservationsSnapshot = await getDocs(collection(db, "Reservations"));
         reservationsSnapshot.forEach(doc => {
-            const reservationData = doc.data();
-            reservedSeats = reservedSeats.concat(reservationData.seats); // Assuming seats is an array
+            if(`${doc.id}`.startsWith(search_id))
+            {
+                const reservationData = doc.data();
+                reservedSeats = reservedSeats.concat(reservationData.seats); // Assuming seats is an array
+            }
         });
     } catch (error) {
         console.error("Error fetching reserved seats:", error);
@@ -120,9 +143,25 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         }, 0);
 
+        
+
         sessionStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
         sessionStorage.setItem("totalPrice", totalPrice);
+        sessionStorage.setItem("selectedMovie", JSON.stringify(selectedMovie));
+        sessionStorage.setItem("selectedShowtime", selectedShowtime);
+        localStorage.setItem('selectedDate', selectedDate);
+
+        sessionStorage.setItem("theatreName", JSON.stringify(selectedTheatre.Name));
+        console.log("asddadas",selectedTheatre.Name);
 
         window.location.href = "../../payment/payment.html";
     });
+});
+
+
+
+
+
+document.getElementById("backBtn").addEventListener("click", async function () {
+    window.location.href = "../../admin/booking/booking.html"
 });
