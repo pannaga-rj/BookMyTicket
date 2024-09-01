@@ -93,7 +93,28 @@ if (movieData) {
     console.log("No movie data found!");
 }
 
+document.getElementById('home').addEventListener('click', async(evt)=>{
+    event.preventDefault(); // Prevent default link behavior
 
+    const user = auth.currentUser;
+    if(user)
+    {
+        try{
+            let userEmail = user.email;
+            console.log(userEmail);
+            const admindoc = await collection(db, 'Admin').doc(userEmail).get();
+
+            if(admindoc.exists){
+                window.location.href = "../admin_home/adminhome.html";
+            }
+            else
+                window.location.href = "../../customer/customerhome.html";
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+});
 
 
 
@@ -118,7 +139,7 @@ document.getElementById('home').addEventListener('click', async (event) => {
                 // alert('An error occurred while checking admin status.');
             }
         } else {
-            // alert('No user is currently signed in.');
+            alert('No user is currently signed in.');
         }
     });
 });
