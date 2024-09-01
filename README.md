@@ -92,7 +92,7 @@ Customer Side booking seats:
 Billing Page:
 ![Screenshot 2024-09-01 191138](https://github.com/user-attachments/assets/7ba30842-cf1d-4565-864e-9341050b5c5f)
 
-![Screenshot 2024-09-01 191217](https://github.com/user-attachments/assets/3253b69e-e497-4722-bf45-7909f1d7b141)
+
 
 
 
@@ -100,6 +100,8 @@ Payment Page:
 ![Screenshot 2024-09-01 171209](https://github.com/user-attachments/assets/e2de43a4-a00d-4c49-bc3f-b8c21d23432c)
 
 ![Screenshot 2024-09-01 171220](https://github.com/user-attachments/assets/44d13c6c-0902-4120-a7c8-0e8b0b410752)
+
+![Screenshot 2024-09-01 191217](https://github.com/user-attachments/assets/3253b69e-e497-4722-bf45-7909f1d7b141)
 
 
 Your Tickets:
